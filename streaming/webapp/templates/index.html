@@ -1,0 +1,18 @@
+<title>dashboard</title>
+<h1>Total number of the collected repositories</h1>
+{% for line in total %}
+<li>{{line.language}}: {{line.count}}</li>
+{% endfor %}
+<h1>Number of the collected repositories with changes pushed during the last 60 seconds</h1>
+<img src={{url_60s}} alt="Chart" height="auto" width="50%">
+<h1>Average number of stars</h1>
+<img src={{stars}} alt="Chart" height="auto" width="50%">
+<h1>Top-10 most frequent words</h1>
+<ul>
+    {% for lang in top10 %}
+    <h3>{{lang}}</h3>
+    {% for line in top10[lang] %}
+    <li>{{line}}</li>
+    {% endfor %}
+    {% endfor %}
+</ul>
