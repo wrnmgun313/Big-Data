@@ -45,7 +45,6 @@ services:
   data-source:
     image: eecs4415/python
     environment:
-      - TOKEN=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
     volumes:
       - ./.:/streaming
     command: python3.9 -u /streaming/data_source.py
